@@ -1,0 +1,9 @@
+[submodule "cloudpebble"]
+	path = cloudpebble
+	url = git@github.com:pebble/cloudpebble.git
+[submodule "cloudpebble-ycmd-proxy"]
+	path = cloudpebble-ycmd-proxy
+	url = git@github.com:pebble/cloudpebble-ycmd-proxy.git
+[submodule "cloudpebble-qemu-controller"]
+	path = cloudpebble-qemu-controller
+	url = git@github.com:pebble/cloudpebble-qemu-controller.git
