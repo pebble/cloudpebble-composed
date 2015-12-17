@@ -12,7 +12,7 @@ Getting Started
    or otherwise get docker and docker-compose into a working state (Linux).
 2. Enter a shell with docker set up appropriately (e.g. via "Docker Quickstart Terminal")
 3. `git clone --recursive git@github.com:pebble/cloudpebble-composed.git && cd cloudpebble-composed`
-4. `docker-compose build` (this will take a while)
+4. `./dev_setup.sh` (this will take a while)
 5. `docker-compose up`
 
 At the end of this, you will have seven Docker containers running. The CloudPebble-specific ones
