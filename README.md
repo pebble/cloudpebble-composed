@@ -15,7 +15,7 @@ Getting Started
 4. `docker-compose build` (this will take a while)
 5. `docker-compose up`
 
-At the end of this, you will have seven Docker instances running. The CloudPebble-specific ones
+At the end of this, you will have seven Docker containers running. The CloudPebble-specific ones
 should pick up most changes without being rebuilt, although in some cases you may have to stop and
 restart them (re-run `docker-compose up`).
 
