@@ -17,7 +17,6 @@ web:
     - PORT=80
     - AWS_S3_FAKE_S3=192.168.99.100:8003
     - MEDIA_URL=http://192.168.99.100:8003/builds.cloudpebble.net/
-    - EXPORT_ROOT=http://192.168.99.100:8003/export.cloudpebble.net/
     - QEMU_URLS=http://192.168.99.100:8001/
     - YCM_URLS=http://192.168.99.100:8002/
     - PUBLIC_URL=http://192.168.99.100/
@@ -33,6 +32,7 @@ celery:
     - DEBUG="yes"
     - RUN_CELERY="yes"
     - AWS_ENABLED=yes
+    - EXPORT_ROOT=http://192.168.99.100:8003/export.cloudpebble.net/
     - AWS_S3_FAKE_S3=192.168.99.100:8003
 qemu:
   build: cloudpebble-qemu-controller/
