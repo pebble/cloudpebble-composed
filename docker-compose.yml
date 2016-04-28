@@ -11,16 +11,18 @@ web:
     - qemu
     - ycmd
   environment:
-    - DEBUG="yes"
-    - RUN_WEB="yes"
-    - AWS_ENABLED="yes"
+    - DEBUG=yes
+    - RUN_WEB=yes
+    - AWS_ENABLED=yes
     - PORT=80
     - AWS_S3_FAKE_S3=192.168.99.100:8003
     - MEDIA_URL=http://192.168.99.100:8003/builds.cloudpebble.net/
     - EXPORT_ROOT=http://192.168.99.100:8003/export.cloudpebble.net/
     - QEMU_URLS=http://192.168.99.100:8001/
     - YCM_URLS=http://192.168.99.100:8002/
-    - PUBLIC_URL=http://192.168.99.100/
+    - PUBLIC_URL=http://192.168.99.100:8080/
+    - NODE_MODULES_PATH=/opt/npm/node_modules
+    - PBLTEST_CERT_LOCATION=pbltest-cert.pem
 celery:
   build: cloudpebble/
   volumes:
@@ -30,16 +32,20 @@ celery:
     - postgres
     - s3
   environment:
-    - DEBUG="yes"
-    - RUN_CELERY="yes"
+    - DEBUG=yes
+    - RUN_CELERY=yes
     - AWS_ENABLED=yes
     - AWS_S3_FAKE_S3=192.168.99.100:8003
+    - PBLTEST_CERT_LOCATION=pbltest-cert.pem
 qemu:
   build: cloudpebble-qemu-controller/
   volumes:
     - "./cloudpebble-qemu-controller/:/code"
   ports:
     - "8001:80"
+  environment:
+    - DEBUG=yes
+    - PEBBLE_TEST_BIN=/pebble-test/runner.py
 ycmd:
   build: cloudpebble-ycmd-proxy/
   volumes:
